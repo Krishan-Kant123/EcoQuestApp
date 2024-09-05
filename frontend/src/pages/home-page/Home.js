@@ -4,32 +4,33 @@ import axios from '../../utils/axios';
 import Loader from '../../utils/Loader/Loader';
 import { useNavigate } from 'react-router';
 import Login from '../login-page/Login';
+import NavigationBar from '../../components/logout/Navbar/NavigationBar';
 
 const Home = () => {
   const userData = useSelector(state => state.userReducer);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   
-  useEffect(()=>{
-    const handler = async ()=>{
-      try{
-        const {data} = await axios.get('/getUser');
-        if(data.user) {
-          dispatch({type:'SET_USER',payload: data.user});
-        }
-      }catch(err) {
-        navigate('/login');
-        alert('You need to login first');
-        return;
-      }
-    }
-    handler();
-  });
+  // useEffect(()=>{
+  //   const handler = async ()=>{
+  //     try{
+  //       const {data} = await axios.get('/getUser');
+  //       if(data.user) {
+  //         dispatch({type:'SET_USER',payload: data.user});
+  //       }
+  //     }catch(err) {
+  //       navigate('/login');
+  //       alert('You need to login first');
+  //       return;
+  //     }
+  //   }
+  //   handler();
+  // });
 
   return (
     <>
-      {!userData.isLoggedIn && <Login/>}
-      Home
+      {/* {!userData.isLoggedIn && <Login/>} */}
+      <NavigationBar/>
     </>
   )
 }
