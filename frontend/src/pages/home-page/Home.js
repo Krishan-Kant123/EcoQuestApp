@@ -4,7 +4,7 @@ import axios from '../../utils/axios';
 import Loader from '../../utils/Loader/Loader';
 import { useNavigate } from 'react-router';
 import Login from '../login-page/Login';
-import NavigationBar from '../../components/logout/Navbar/NavigationBar';
+import Header from '../../components/Header/header';
 
 const Home = () => {
   const userData = useSelector(state => state.userReducer);
@@ -30,7 +30,10 @@ const Home = () => {
   return (
     <>
       {/* {!userData.isLoggedIn && <Login/>} */}
-      <NavigationBar/>
+   <Header/>
+
+ 
+      
     </>
   )
 }

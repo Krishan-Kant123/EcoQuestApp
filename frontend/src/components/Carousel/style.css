@@ -1,0 +1,21 @@
+.image{
+    z-index: -1;
+    position: absolute;
+    filter: blur(2px);
+}
+.text{
+    height: 50svh;
+    aspect-ratio: 16/9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    padding: 30px;
+
+}
+.txt{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
