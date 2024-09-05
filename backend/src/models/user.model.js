@@ -23,17 +23,36 @@ const userSchema = new Schema({
         lowercase: true,
         trim: true
     },
-    image: {
-        type:String,
-        required: true
-    },
     password:{
         type:String,
         required: true
     },
     refreshToken: {
         type:String
-    }
+    },
+    accessToken:{
+        type:String
+    },
+    points: {
+        type: Number,
+        default: 0
+    },
+    redemptionHistory: [
+        {
+            date: {
+                type: Date,
+                default: Date.now
+            },
+            pointsRedeemed: {
+                type: Number,
+                required: true
+            },
+            itemsRedeemed: {
+                type: Schema.Types.ObjectId,
+                ref: 'Items'
+            }
+        }
+    ]
 },{
     timestamps: true
 });
